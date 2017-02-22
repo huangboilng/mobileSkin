@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>取号缴费</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="css/kendo.mobile.all.min.css" rel="stylesheet" />
+		<link href="css/bootstrap.min.css" rel="stylesheet" />
+		<link href="css/style.css" rel="stylesheet" />
+		<script src="js/jquery.min.js"></script>
+		<script src="js/kendo.mobile.min.js"></script>
+	</head>
+	<body>				  
+		<div data-role="view" id="orderpay" class="page-bgcolor-gray">
+		     <div data-role="header">
+					<div data-role="navbar">
+						<span data-role="view-title" class="navbar-titlespan borderbutton-ed">取号缴费</span>
+						<span data-role="view-title" class="navbar-getnumber-listbox row">
+							<div class="col-xs-12 navbar-getnumber-listbox-msg">
+								<div class="col-xs-8 text-left">
+									<p class="navbar-getnumber-listbox-p">内科门诊(愚公)</p>
+									<p class="navbar-getnumber-listbox-p">总费用: <span class="paysuccess-style">&nbsp;4.00元</span></p>
+									<p class="navbar-getnumber-listbox-p boxradius-spanleft">2015-07-03 周六 (下)</p>
+								</div>
+								<div class="col-xs-4 btn-padding text-right">
+									<button type="button" class="btn btn-default btn-bgcolor-blue">去缴费</button>
+								</div>
+						    </div>
+						</span>
+					</div>
+				</div>  
+			<div data-role="footer"></div>  
+		</div>  
+		<script>  
+		new kendo.mobile.Application(document.body, {
+            skin: "flat-skin",
+        });  
+		</script> 
+		
+	</body>
+</html>	

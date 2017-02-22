@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>缴费详情</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="css/kendo.mobile.all.min.css" rel="stylesheet" />
+		<link href="css/bootstrap.min.css" rel="stylesheet" />
+		<link href="css/style.css" rel="stylesheet" />
+		<script src="js/jquery.min.js"></script>
+		<script src="js/kendo.mobile.min.js"></script>
+		<script src="js/bootstrap.js"></script>
+	</head>
+	<body>				  
+		<div data-role="view" id="orderpay" class="page-bgcolor-gray">
+		     <div data-role="header">
+					<div data-role="navbar">
+						<span data-role="view-title" class="navbar-titlespan">缴费详情</span>
+					</div>
+				</div>  
+			 <div class="container">
+				 <div class="row">
+				    <hr class="bold-bgblack"></hr>
+	
+					<div class="col-xs-12">
+						<div class="boxradius">
+							<ul data-role="listview" class="boxradius-paddingtop">
+								<li>
+									<span class="col-xs-4 boxradius-spanleft">订单号:</span>
+									<span class="col-xs-8 boxradius-spanright">WX2015070268752365</span>
+								</li>
+								<li>
+									<span class="col-xs-4 boxradius-spanleft">流水号:</span>
+									<span class="col-xs-8 boxradius-spanright">20150703699787</span>
+								</li>
+								<li>
+									<span class="col-xs-4 boxradius-spanleft">开单科室:</span>
+									<span class="col-xs-8 boxradius-spanright">内科门诊(黄玲)</span>
+								</li>
+								<li>
+									<span class="col-xs-4 boxradius-spanleft">执行科室:</span>
+									<span class="col-xs-8 boxradius-spanright">肌电图</span>
+								</li>
+								<li>
+									<span class="col-xs-4 boxradius-spanleft">开单时间:</span>
+									<span class="col-xs-8 boxradius-spanright">2015-07-03</span>
+								</li>
+								<li>
+									<span class="col-xs-4 boxradius-spanleft">患者姓名:</span>
+									<span class="col-xs-8 boxradius-spanright">李敏</span>
+								</li>
+								<li>
+									<span class="col-xs-4 boxradius-spanleft">就诊卡号:</span>
+									<span class="col-xs-8 boxradius-spanright">2000009658</span>
+								</li>
+								<li>
+									<span class="col-xs-4 boxradius-spanleft">应付金额:</span>
+									<span class="col-xs-8 boxradius-spanright">4.00元</span>
+								</li>
+								<li>
+									<span class="col-xs-4 boxradius-spanleft">状态:</span>
+									<span class="col-xs-8 boxradius-spanright paysuccess-style">缴费成功</span>
+								</li>
+								<li>
+									<span class="col-xs-4 boxradius-spanleft">查看明细:</span>
+									<span class="col-xs-8 boxradius-spanright text-right">
+					<button type="button" class="btn-right-style text-right" data-toggle="modal" data-target="#paydetailModal">></button>
+									</span>
+								</li>
+							</ul>
+						</div>	 
+					</div>
+				</div> 	
+				
+				 <div class="row">
+				    <hr class="bold-bgblack"></hr>
+	
+					<div class="col-xs-12">
+						<div class="boxradius">
+							<ul data-role="listview" class="boxradius-paddingtop">
+								<li>
+									<span class="col-xs-4 boxradius-spanleft">订单号:</span>
+									<span class="col-xs-8 boxradius-spanright">WX2015070268752365</span>
+								</li>
+								<li>
+									<span class="col-xs-4 boxradius-spanleft">流水号:</span>
+									<span class="col-xs-8 boxradius-spanright">20150703699787</span>
+								</li>
+								<li>
+									<span class="col-xs-4 boxradius-spanleft">开单科室:</span>
+									<span class="col-xs-8 boxradius-spanright">内科门诊(黄玲)</span>
+								</li>
+								<li>
+									<span class="col-xs-4 boxradius-spanleft">执行科室:</span>
+									<span class="col-xs-8 boxradius-spanright">肌电图</span>
+								</li>
+								<li>
+									<span class="col-xs-4 boxradius-spanleft">开单时间:</span>
+									<span class="col-xs-8 boxradius-spanright">2015-07-03</span>
+								</li>
+								<li>
+									<span class="col-xs-4 boxradius-spanleft">患者姓名:</span>
+									<span class="col-xs-8 boxradius-spanright">李敏</span>
+								</li>
+								<li>
+									<span class="col-xs-4 boxradius-spanleft">就诊卡号:</span>
+									<span class="col-xs-8 boxradius-spanright">2000009658</span>
+								</li>
+								<li>
+									<span class="col-xs-4 boxradius-spanleft">应付金额:</span>
+									<span class="col-xs-8 boxradius-spanright">4.00元</span>
+								</li>
+								<li>
+									<span class="col-xs-4 boxradius-spanleft">状态:</span>
+									<span class="col-xs-8 boxradius-spanright paysuccess-style">缴费成功</span>
+								</li>
+								<li>
+									<span class="col-xs-4 boxradius-spanleft">查看明细:</span>
+									<span class="col-xs-8 boxradius-spanright text-right">
+					<button type="button" class="btn-right-style text-right" data-toggle="modal" data-target="#paydetailModal">></button>
+									</span>
+								</li>
+							</ul>
+						</div>	 
+					</div>
+				</div> 	
+				
+            </div>
+			<div data-role="footer"></div>  
+		</div>  
+		
+		
+		<!-- Modal -->
+		<div class="modal fade" id="paydetailModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		  <div class="modal-dialog" role="document" style="z-index:999;">
+			<div class="modal-content">
+			  <div class="modal-header" style="padding-left:8px;">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title paysuccess-style" id="myModalLabel">收据列表</h4>
+			  </div>
+			  <div class="modal-body">
+					<div class="col-xs-12">
+						<ul data-role="listview" class="paydetailModal-ulbox">
+							<li>
+								<span class="col-xs-4 boxradius-spanleft" style="padding-left: 0;">充值缴费号:</span>
+								<span class="col-xs-8 boxradius-spanright">201507036454189</span>
+								<div class="clearfix"></div>
+							</li>
+							<li>
+								<span class="boxradius-spanright">请前往一号楼西药房取药</span>
+								<div class="clearfix"></div>
+							</li>
+							<li>
+								<span class="boxradius-spanleft paysuccess-style">详细列表</span>
+								<div class="clearfix"></div>
+							</li>
+							<li>
+							    <span class="boxradius-spanright">材料: 药房分装用塑药袋(内服)</span>
+								<span class="boxradius-spanleft">
+									<h5 class="col-xs-4">规格：5mg</h5>   
+									<h5 class="col-xs-4">数量：1支</h5> 
+									<h5 class="col-xs-4">金额：4.06元</h5>   
+								</span>
+								<div class="clearfix"></div>
+							</li>
+							<li>
+							    <span class="boxradius-spanright">材料: 药房分装用塑药袋(内服)</span>
+								<span class="boxradius-spanleft">
+									<h5 class="col-xs-4">规格：5mg</h5>   
+									<h5 class="col-xs-4">数量：1支</h5> 
+									<h5 class="col-xs-4">金额：4.06元</h5>  
+								</span>
+								<div class="clearfix"></div>
+							</li>
+							<li>
+							    <span class="boxradius-spanright">材料: 药房分装用塑药袋(内服)</span>
+								<span class="boxradius-spanleft">
+									<h5 class="col-xs-4">规格：5mg</h5>   
+									<h5 class="col-xs-4">数量：1支</h5> 
+									<h5 class="col-xs-4">金额：4.06元</h5>   
+								</span>
+								<div class="clearfix"></div>
+							</li>
+						</ul>
+					</div>	
+			  </div>
+			  <div class="modal-footer"></div>
+			</div>
+		  </div>
+		</div>
+
+
+		<script>  
+		new kendo.mobile.Application(document.body, {
+            skin: "flat-skin",
+        });  
+		
+		$('#paydetailModal').on('show.bs.modal', function (e) {  
+			$(this).find('.modal-dialog').css({  
+				'margin-top': function () {  
+					var modalHeight = 40;  
+					return (modalHeight);  
+				}  
+			});      
+		}); 
+
+		</script> 
+		
+	</body>
+</html>	

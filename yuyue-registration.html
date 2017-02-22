@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>预约挂号</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="css/kendo.mobile.all.min.css" rel="stylesheet" />
+		<link href="css/bootstrap.min.css" rel="stylesheet" />
+		<link href="css/font-awesome.css" rel="stylesheet" />
+		<link href="css/swiper.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/font-awesome.css" />	
+		<link href="css/scrollbar.css" rel="stylesheet" />
+		<link href="css/style.css" rel="stylesheet" />
+		<script src="js/jquery.min.js"></script>
+		<script src="js/kendo.mobile.min.js"></script>
+		<script src="js/swiper.min.js"></script>
+		<script src="js/iscroll.js"></script>
+		<script src="js/bootstrap.min.js"></script>	
+		<script src="js/bootstrap3-typeahead.min.js"></script>
+		<script src="js/underscore.js"></script>
+		
+
+	</head>
+
+	<body>				  
+		<div data-role="view" id="orderpay">
+		     <div data-role="header">
+				<div data-role="navbar">
+					<div class="view-title-group btn-bgcolor-blue col-xs-12">
+						<span class="col-xs-6 view-title-left">科室选择<i class="fa fa-angle-down arrows-division"></i></span>
+						<span class="col-xs-1 hrborder"></span>
+						<span class="col-xs-5 view-title-right"><b class="glyphicon glyphicon-search name-search"></b>姓名查找</span>
+					</div>
+				</div>
+				<div class="swiper-container"><div class="swiper-wrapper"></div></div>
+					
+				<div class="showhide-navbox" id="division-hidebox">
+					<div class="searchbox">
+						<div class="input-group">
+							  <span class="input-group-btn">
+								<button class="btn btn-default" type="button">
+									<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+								</button>
+							  </span>
+							  <input type="text" class="form-control" placeholder="請輸入科室名" id="searchinput">
+						</div>
+					</div>
+					<div id="scroller" class="boxradius yykslistbox"> 
+						<ul id="thelist">
+							<li>消化内科</li>
+							<li>消化内科</li>
+							<li>消化内科</li>
+						</ul>
+					</div>	
+				  </div>
+				  
+				  <div class="showhide-navbox" id="name-search-hidebox">
+					<div class="searchbox btn-bgcolor-blue">
+						<div class="input-group col-xs-6">
+							  <span class="input-group-btn">
+								<button class="btn btn-default" type="button">
+									<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+								</button>
+							  </span>
+							  <input type="text" class="form-control" placeholder="請輸入医生名" id="searchinput">
+						</div>
+						<span class="name-search-cancel" id="name-search-cancel">取消</span>
+					</div>
+					<div id="scroller" class="boxradius yykslistbox"> 
+						<ul id="thelist">
+							<li>张三</li>
+							<li>五四</li>
+							<li>王二麻子</li>
+						</ul>
+					</div>	
+				  </div>
+				  
+			 </div>  
+								 
+			 <div class="container yuyueregist-libox">
+				 <div class="row">
+					<div class="col-xs-12">
+						<div class="boxradius yuyuelistbox">
+							<ul data-role="listview">
+								<li>
+									<span class="col-xs-3 boxradius-spanleft">
+										<img src="images/doctoricon.png"/>
+									</span>
+									<span class="col-xs-7 boxradius-spanright">
+										<h5>张大 主任医师</h5>
+										<h5>南昌大学第一附属医院</h5>
+									</span>
+									<span class="col-xs-2 boxradius-btnbox">
+										<button type="button" class="btn btn-default btn-bgcolor-blue" data-toggle="modal" data-target="#myModal-yuyue">有号</button>
+									</span>
+								</li>
+								<li>
+									<span class="col-xs-3 boxradius-spanleft">
+										<img src="images/doctoricon.png"/>
+									</span>
+									<span class="col-xs-7 boxradius-spanright">
+										<h5>张大 主任医师</h5>
+										<h5>南昌大学第一附属医院</h5>
+									</span>
+									<span class="col-xs-2 boxradius-btnbox">
+										<button type="button" class="btn btn-default btn-bgcolor-darkgray">约满</button>
+									</span>
+								</li>
+							</ul>
+						</div>	
+					</div>
+				</div> 
+            </div>
+			<div data-role="footer"></div>  
+		</div> 
+		
+		<div class="modal fade" id="myModal-yuyue" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog modal-lg">
+			<div class="time-yuyue-dialog modal-content">
+				<div class="time-yuyue-dialog-title">
+					<h5 class="fontbule-style">上午 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></h5>
+					<h5>普通门诊：7元</h5>
+				</div>
+				<ul class="time-yuyue-dialog-ulbox">
+					<li>
+						<b class="glyphicon glyphicon-time col-xs-1"></b>
+						<h5 class="col-xs-4">08:00-09:00</h5>
+						<h5 class="col-xs-4">剩余:60个号</h5>
+						<button class="btn btn-default btn-bgcolor-blue col-xs-2">预约</button>
+						<b class="clearfix"></b>
+					</li>
+					<li>
+						<b class="glyphicon glyphicon-time col-xs-1"></b>
+						<h5 class="col-xs-4">09:00-10:00</h5>
+						<h5 class="col-xs-4">剩余:0个号</h5>
+						<button class="btn btn-default btn-bgcolor-darkgray col-xs-2" disabled="disabled">约满</button>
+						<b class="clearfix"></b>
+					</li>
+					<li>
+						<b class="glyphicon glyphicon-time col-xs-1"></b>
+						<h5 class="col-xs-4">10:00-11:00</h5>
+						<h5 class="col-xs-4">剩余:08个号</h5>
+						<button class="btn btn-default btn-bgcolor-blue col-xs-2">预约</button>
+						<b class="clearfix"></b>
+					</li>
+				</ul>
+				<div class="time-yuyue-dialog-title">
+					<h5 class="fontbule-style">下午</h5>
+					<h5>普通门诊：7元</h5>
+				</div>
+				<ul class="time-yuyue-dialog-ulbox">
+					<li>
+						<b class="glyphicon glyphicon-time col-xs-1"></b>
+						<h5 class="col-xs-4">08:00-09:00</h5>
+						<h5 class="col-xs-4">剩余:60个号</h5>
+						<button class="btn btn-default btn-bgcolor-blue col-xs-2">预约</button>
+						<b class="clearfix"></b>
+					</li>
+					<li>
+						<b class="glyphicon glyphicon-time col-xs-1"></b>
+						<h5 class="col-xs-4">09:00-10:00</h5>
+						<h5 class="col-xs-4">剩余:0个号</h5>
+						<button class="btn btn-default btn-bgcolor-darkgray col-xs-2" disabled="disabled">约满</button>
+						<b class="clearfix"></b>
+					</li>
+					<li>
+						<b class="glyphicon glyphicon-time col-xs-1"></b>
+						<h5 class="col-xs-4">10:00-11:00</h5>
+						<h5 class="col-xs-4">剩余:08个号</h5>
+						<button class="btn btn-default btn-bgcolor-blue col-xs-2">预约</button>
+						<b class="clearfix"></b>
+					</li>
+				</ul>
+				<div class="time-yuyue-dialog-title">
+					<h5 class="fontbule-style">上午</h5>
+					<h5>普通门诊：7元</h5>
+				</div>
+				<ul class="time-yuyue-dialog-ulbox">
+					<li>
+						<b class="glyphicon glyphicon-time col-xs-1"></b>
+						<h5 class="col-xs-4">08:00-09:00</h5>
+						<h5 class="col-xs-4">剩余:60个号</h5>
+						<button class="btn btn-default btn-bgcolor-blue col-xs-2">预约</button>
+						<b class="clearfix"></b>
+					</li>
+					<li>
+						<b class="glyphicon glyphicon-time col-xs-1"></b>
+						<h5 class="col-xs-4">09:00-10:00</h5>
+						<h5 class="col-xs-4">剩余:0个号</h5>
+						<button class="btn btn-default btn-bgcolor-darkgray col-xs-2" disabled="disabled">约满</button>
+						<b class="clearfix"></b>
+					</li>
+					<li>
+						<b class="glyphicon glyphicon-time col-xs-1"></b>
+						<h5 class="col-xs-4">10:00-11:00</h5>
+						<h5 class="col-xs-4">剩余:08个号</h5>
+						<button class="btn btn-default btn-bgcolor-blue col-xs-2">预约</button>
+						<b class="clearfix"></b>
+					</li>
+				</ul>
+				<div class="time-yuyue-dialog-title">
+					<h5 class="fontbule-style">下午</h5>
+					<h5>普通门诊：7元</h5>
+				</div>
+				<ul class="time-yuyue-dialog-ulbox">
+					<li>
+						<b class="glyphicon glyphicon-time col-xs-1"></b>
+						<h5 class="col-xs-4">08:00-09:00</h5>
+						<h5 class="col-xs-4">剩余:60个号</h5>
+						<button class="btn btn-default btn-bgcolor-blue col-xs-2">预约</button>
+						<b class="clearfix"></b>
+					</li>
+					<li>
+						<b class="glyphicon glyphicon-time col-xs-1"></b>
+						<h5 class="col-xs-4">09:00-10:00</h5>
+						<h5 class="col-xs-4">剩余:0个号</h5>
+						<button class="btn btn-default btn-bgcolor-darkgray col-xs-2" disabled="disabled">约满</button>
+						<b class="clearfix"></b>
+					</li>
+					<li>
+						<b class="glyphicon glyphicon-time col-xs-1"></b>
+						<h5 class="col-xs-4">10:00-11:00</h5>
+						<h5 class="col-xs-4">剩余:08个号</h5>
+						<button class="btn btn-default btn-bgcolor-blue col-xs-2">预约</button>
+						<b class="clearfix"></b>
+					</li>
+				</ul>
+			</div>
+			</div>
+		</div> 
+		<div class="showhide-opacity" style="display:none;width: 100%;height: 100%;  opacity: .5;z-index: 0;  position: absolute; top: 0; right: 0;left: 0;background-color: #000;"></div>
+<script>
+var huanglingdate = new Date(); 
+var Daytotal = 31; //滑动的天数
+var ymd,datehuangie,weekday, yearie, monthie, dayie;
+for (var i = 1; i < Daytotal; ++i) {
+	  ymd = GetDateStr(i);
+	  datehuangie = NewDate(ymd[0]);
+	  weekday = "日一二三四五六".split("")[new Date(datehuangie.getFullYear(), datehuangie.getMonth(), datehuangie.getDate()).getDay()];
+	  yearie = datehuangie.getFullYear(); 
+	  monthie = datehuangie.getMonth()+1;
+	  dayie = datehuangie.getDate(); 
+	  if (i == 1) {
+		  $(".swiper-wrapper").append("<div name=\"mydate\" class=\"swiper-slide active\" data=" + yearie + "-" + monthie + "-" + dayie + "><div class=\"triangle-right\"><b class=\"glyphicon glyphicon-ok\"></b></div><h6>" + weekday + "</h6><h4>" + (monthie + "/" + dayie) + "</h4></div>");
+
+	  } else {
+		  $(".swiper-wrapper").append("<div name=\"mydate\" class=\"swiper-slide\"  data=" + yearie + "-" + monthie + "-" + dayie + "><h6>" + weekday + "</h6><h4>" + (monthie + "/" + dayie) + "</h4></div>");
+	  }
+  }
+
+
+function NewDate(str)
+{
+	var date=new Date();
+	date.setUTCFullYear(str[0], str[1]-1, str[2]);
+	date.setUTCHours(0, 0, 0, 0);
+	return date;
+}
+function GetDateStr(AddDayCount) {
+	var huanglingdate = new Date();
+	huanglingdate.setDate(huanglingdate.getDate()+AddDayCount);
+	var year = parseInt(huanglingdate.getFullYear());
+	var month = parseInt(huanglingdate.getMonth()+1);
+	var nowDate = parseInt(huanglingdate.getDate());
+	var dayhling = new Array([ year, month, nowDate]); 
+    return dayhling;
+}
+
+$("#thelist li").clone().appendTo("#thelist-new");
+
+$(document).ready(function ($) {
+
+	$.fn.typeahead.Constructor.prototype.blur = function () {
+		var that = this;
+		setTimeout(function () { that.hide() }, 250);
+	};
+
+	var products = ["心脑血管科", "消化外科", "外科", "内科", "妇科", "泌尿科", "肝", "消化内科", "心脏科"];
+
+	var that = this;
+	var itemarr = new Array();
+	$('#searchinput').typeahead({
+		source: function (query, process) {
+			var results = _.map(products, function (product) { 
+				itemarr.length = 0;
+				return product;
+			});
+			process(results);
+		},
+		
+		highlighter: function (item) {
+			var query = this.query.replace(/[\-\[\]{}()*+?.,\\\^$|#\s]/g, '\\$&');
+			
+			return item.replace(new RegExp('(' + query + ')', 'ig'), function ($1, match) {
+				
+				itemarr.push(item);
+				that.setSelectedProduct(itemarr);
+				return '<strong>' + match + '</strong>'
+			})
+		}
+	});
+
+	this.setSelectedProduct = function (item) {
+		if(item != ""){
+			 $('#thelist').empty();
+			 $.unique(itemarr);//console.log(itemarr);
+			
+			 $.each(itemarr, function(i,val){      
+				  $('#thelist').append("<li>" + val + "</li>");
+			  });
+			
+		}
+	}
+	
+	$("#searchinput").change(function() {
+		var current = $("#searchinput").typeahead("getActive");
+		if (current) {
+			if(current != $("#searchinput").val() && $("#searchinput").val() == ''){
+				$('#thelist').empty();
+				$("#thelist-new li").clone().appendTo("#thelist");
+			}
+		}
+	});
+
+})
+
+$(".swiper-slide").on("click", function(e){
+	$(this).addClass("active");
+	$(this).prepend("<div class=\"triangle-right\"><b class=\"glyphicon glyphicon-ok\"></b></div>");
+	$(this).siblings(".swiper-slide").removeClass("active");
+});
+	
+
+$(".view-title-left").click(function(){
+	$("#name-search-hidebox").hide();
+	if($(this).find(".arrows-division").hasClass("fa-angle-down")){
+		$(this).find(".arrows-division").removeClass("fa-angle-down").addClass("fa-angle-up");
+	}else{
+		$(this).find(".arrows-division").removeClass("fa-angle-up").addClass("fa-angle-down");
+	}
+	
+	$("#division-hidebox").animate({
+	   height: 'toggle', opacity: 'toggle'
+	}, 300);  
+	return false;
+});	
+
+$(".view-title-right, #name-search-cancel").click(function(){
+	$("#division-hidebox").hide();
+	
+	$("#name-search-hidebox").animate({
+	   height: 'toggle', opacity: 'toggle'
+	}, 300);  
+	/*setTimeout(function () {	
+		if($("#name-search-hidebox").css("display") == "none"){
+			$(".showhide-opacity").css("display","none");
+		}else{
+			$(".showhide-opacity").css("display","block");
+		}
+	}, 301);*/
+	return false;
+});	
+
+/*var divClicked = false;
+document.onclick = function() {
+   if(!divClicked) {
+		if($("#division-hidebox").css("display") == "block"){
+			if($(".view-title-left").find(".arrows-division").hasClass("fa-angle-down")){
+				$(".view-title-left").find(".arrows-division").removeClass("fa-angle-down").addClass("fa-angle-up");
+			}else{
+				$(".view-title-left").find(".arrows-division").removeClass("fa-angle-up").addClass("fa-angle-down");
+			}
+		}
+		$("#division-hidebox").animate({
+		   opacity: 'hide'
+		}, 300);
+   }
+   divClicked = false;
+};	*/
+
+	
+</script>
+
+
+<script>  
+new kendo.mobile.Application(document.body, {
+	skin: "flat-skin",
+});  
+</script> 
+
+<script>
+var swiper = new Swiper('.swiper-container', {
+	slidesPerView: 7,
+	paginationClickable: true,
+	spaceBetween: 0,
+	freeMode: true
+});	
+</script>
+<script src="js/iscroll2.js"></script>	
+		
+	</body>
+</html>	

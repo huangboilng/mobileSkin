@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>添加就诊卡</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="css/kendo.mobile.all.min.css" rel="stylesheet" />
+		<link href="css/bootstrap.min.css" rel="stylesheet" />
+		<link href="css/font-awesome.min.css" rel="stylesheet" />
+		<link href="css/style.css" rel="stylesheet" />
+		<script src="js/jquery.min.js"></script>
+		<script src="js/kendo.mobile.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+	</head>
+	<body>				  
+		<div data-role="view" id="orderdetail" class="page-bgcolor-gray">
+		    <div data-role="header">
+				<div data-role="navbar">
+					<span data-role="view-title" class="navbar-titlespan">添加就诊卡</span>
+				</div>
+			</div>  
+
+			<div class="cartdetailbox">
+				<ul class="list-group addcartlistbox">
+					<li class="list-group-item">
+						<span class="col-xs-3">卡类型</span>
+						<span class="col-xs-9">
+							<div class="btn-group selectbtnbox" role="group">
+								<button type="button" class="btn btn-default dropdown-toggle selectbtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								  <span class="selectbtn-dropdown">诊疗卡</span>
+								  <span class="fa fa-angle-down icondown"></span>
+								</button>
+								<ul class="dropdown-menu">
+								  <li><a href="#">巴拉巴拉卡</a></li>
+								  <li><a href="#">诊疗卡</a></li>
+								  <li><a href="#">健康卡</a></li>
+								</ul>
+							</div>
+						</span>
+					</li>
+					<li class="list-group-item">
+						<span class="col-xs-3">卡号</span>
+						<span class="col-xs-9"><input type="text" class="noborder-input"  placeholder="请输入卡号"></span>
+					</li>
+					<li class="list-group-item">
+						<span class="col-xs-3">手机号</span>
+						<span class="col-xs-9"><input type="text" class="noborder-input"  placeholder="请输入手机号"></span>
+					</li>
+					<li class="list-group-item">
+						<span class="col-xs-3">验证码</span>
+						<span class="col-xs-5"><input type="text" class="noborder-input"  placeholder="请输入验证码"></span>
+						<span class="col-xs-4 addcart-hrborder"><a href="#" class="sendyzm">发送验证码</a></span>
+					</li>
+				</ul>
+				<h5 class="col-xs-12 msg">验证码将发送到您在我院办卡时预留的手机号上,如果您的预留电话需要更改,请持卡和身份证至门诊一楼15-17窗口进行更改</h5>
+			</div>  	
+			<div class="col-xs-12">
+				<button type="button" class="btn btn-default btn-bgcolor btn-bgcolor-blue">确定</button>
+			</div>
+							
+			<div data-role="footer"></div> 
+		</div>  
+		
+		<script type="text/javascript">
+		
+			function customDropDown(ele){
+				this.dropdown=ele;
+				this.placeholder=this.dropdown.find(".selectbtn-dropdown");
+				this.options=this.dropdown.find("ul.dropdown-menu > li");
+				this.val='';
+				this.index=-1;
+				this.initEvents();
+			}
+			customDropDown.prototype={
+				initEvents:function(){
+					var obj=this;
+					obj.dropdown.on("click",function(event){
+						$(this).toggleClass("active");
+					});
+					
+					obj.options.on("click",function(){
+						var opt=$(this);
+						obj.text=opt.find("a").text();
+						obj.val=opt.attr("value");
+						obj.index=opt.index();
+						obj.placeholder.text(obj.text);
+					});
+				},
+				getText:function(){
+					return this.text;
+				},
+				getValue:function(){
+					return this.val;
+				},
+				getIndex:function(){
+					return this.index;
+				}
+			}
+			$(document).ready(function(){
+				var mydropdown=new customDropDown($(".selectbtnbox"));
+			});
+		</script>
+	
+		<script>  
+		new kendo.mobile.Application(document.body, {
+            skin: "flat-skin",
+        });  
+		</script> 
+	</body>
+</html>	

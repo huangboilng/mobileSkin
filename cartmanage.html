@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>就诊卡管理</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="css/kendo.mobile.all.min.css" rel="stylesheet" />
+		<link href="css/bootstrap.min.css" rel="stylesheet" />
+		<link href="css/style.css" rel="stylesheet" />
+		<script src="js/jquery.min.js"></script>
+		<script src="js/kendo.mobile.min.js"></script>
+	</head>
+	<body>				  
+		<div data-role="view" id="orderpay" class="page-bgcolor-gray">
+		     <div data-role="header">
+				<div data-role="navbar">
+					<span data-role="view-title" class="navbar-titlespan">就诊卡管理</span>
+				</div>
+			</div>
+
+			<div class="row">	
+				<div class="col-xs-12 cartmanagebox">
+					<div class="cartmanagebox-msglist">
+						<div class="cartmanagebox-msg">
+							<span class="col-xs-9">
+								<h5>姓名: &nbsp; 愚公</h5>
+								<h5>卡号: &nbsp; 900002456(诊疗卡)</h5>
+							</span>
+							<span class="cartlist-default text-right col-xs-3">
+								<h5 class="paysuccess-style cartmanagebox-msg-default">(默认)</h5>
+								<h5 class="cartmanagebox-arrows">></h5>
+							</span>
+							<div class="clearfix"></div>
+						</div>
+						<div class="cartmanagebox-msg bghr-green-vertical">
+							<span class="col-xs-9">
+								<h5>姓名: &nbsp; 大头儿子小头爸爸</h5>
+								<h5>卡号: &nbsp; 900002456(诊疗卡)</h5>
+							</span>
+							<span class="text-right col-xs-3">
+								<h5 class="cartmanagebox-arrows">></h5>
+							</span>
+							<div class="clearfix"></div>
+						</div>
+						<div class="cartmanagebox-msg bghr-orange-vertical">
+							<span class="col-xs-9">
+								<h5>姓名: &nbsp; 愚公</h5>
+								<h5>卡号: &nbsp; 900002456(诊疗卡)</h5>
+							</span>
+							<span class="cartlist-default text-right col-xs-3">
+								<h5 class="cartmanagebox-arrows">></h5>
+							</span>
+							<div class="clearfix"></div>
+						</div>
+						<div class="cartmanagebox-msg bghr-blue-vertical">
+							<span class="col-xs-9">
+								<h5>姓名: &nbsp; 大头儿子小头爸爸</h5>
+								<h5>卡号: &nbsp; 900002456(诊疗卡)</h5>
+							</span>
+							<span class="text-right col-xs-3">
+								<h5 class="cartmanagebox-arrows">></h5>
+							</span>
+							<div class="clearfix"></div>
+						</div>
+					</div>	 
+					<div class="col-xs-12"><button type="button" class="btn btn-default btn-bgcolor btn-bgcolor-blue">添加就诊卡</button></div>
+				</div>
+			</div> 	
+		</div>
+		  
+		<div data-role="footer"></div>   
+		<script>  
+		new kendo.mobile.Application(document.body, {
+            skin: "flat-skin",
+        });  
+		</script> 
+		
+	</body>
+</html>	

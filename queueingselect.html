@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>就诊队列查询</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="css/kendo.mobile.all.min.css" rel="stylesheet" />
+		<link href="css/bootstrap.min.css" rel="stylesheet" />
+		<link href="css/style.css" rel="stylesheet" />
+		<script src="js/jquery.min.js"></script>
+		<script src="js/kendo.mobile.min.js"></script>
+	</head>
+	<body>				  
+		<div data-role="view" id="orderdetail" class="page-bgcolor-gray">
+		    <div data-role="header">
+				<div data-role="navbar">
+					<span data-role="view-title" class="navbar-titlespan">就诊队列查询</span>
+				</div>
+			</div>  
+			 <div class="container">
+				 <div class="row">
+				    
+					<div class="queueingselectbox">
+						<hr class="border-redhr"></hr>
+						<div class="col-xs-12">
+							<h5>就诊科室: &nbsp; 耳鼻咽喉科</h5>
+							<h5>就诊医生: &nbsp; 黄玲</h5>
+							<h5>就诊号类: &nbsp; 妇科普通号</h5>
+							<h5>当前序号: &nbsp; <span class="paysuccess-style">2</span></h5>
+							<h4 class="queueingselectbox-h4">您前面还有<span class="paysuccess-style">1</span>个人在等待,其中<span class="paysuccess-style">0</span>个人尚未取号</h4>
+							<h5 class="boxradius-spanleft">请在候诊区耐心等待叫号</h5>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</div> 	
+            </div>
+			<div data-role="footer"></div> 
+		</div>  
+		<script>  
+		new kendo.mobile.Application(document.body, {
+            skin: "flat-skin",
+        });  
+		</script> 
+	</body>
+</html>	

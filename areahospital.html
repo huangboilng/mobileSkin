@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>省预约平台</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="css/kendo.mobile.all.min.css" rel="stylesheet" />
+		<link href="css/bootstrap.min.css" rel="stylesheet" />
+		<link href="css/style.css" rel="stylesheet" />
+		<script src="js/jquery.min.js"></script>
+
+	<script src="http://cdn.bitcare.cn/kendoui/2014.2.1008/js/kendo.mobile.min.js"></script>
+
+		<script src="js/fastclick.min.js"></script>
+
+		
+	</head>
+	<body>				  
+		<div data-role="view" id="orderdetail" class="page-bgcolor-gray">
+		    <div data-role="header">
+				<div data-role="navbar">
+					<span data-role="view-title" class="navbar-titlespan">省预约平台</span>
+				</div>
+			</div>  
+ 	
+			<div class="bk_chooseDept">
+			
+				<div id="collapsible" data-role="collapsible" style="position:fixed; top:0; left:0; width:40%;">
+					<div data-role="scroller" class="scrollerheight">
+						<ul id="firstDep" data-role="listview">
+						
+							<li class="zg_active" onclick="SubDeptList(38,'南昌',this)"> 南昌</li>
+							<li onclick="SubDeptList(38,'景德镇',this)">景德镇</li>
+							<li onclick="SubDeptList(38,'萍乡',this)">萍乡</li>
+							<li onclick="SubDeptList(38,'九江',this)">九江</li>
+							<li onclick="SubDeptList(38,'新余',this)">新余</li>
+							<li onclick="SubDeptList(38,'鹰潭',this)">鹰潭</li>
+							<li onclick="SubDeptList(38,'赣州',this)">赣州</li>
+							<li onclick="SubDeptList(38,'吉安',this)">吉安</li>
+						
+						</ul>
+					</div>
+				</div>
+				
+				<div id="collapsible1" data-role="collapsible" style="position:fixed; top:0; left:40%; width:60%;">
+					<div data-role="scroller" class="scrollerheight">
+						<ul id="subDep" data-role="listview">
+							<li>南昌大学第一附属医院</li>
+							<li>南昌大学第二附属医院</li>
+							<li>江西省儿童医院</li>
+							<li>江西省人民医院</li>			
+							<li>南昌市第一医院</li>
+							<li>江西省肿瘤医院</li>
+							<li>江西省妇幼保健院</li>
+							<li>江西中医药大学附属医院</li>
+							<li>南昌大学第一附属医院</li>
+							<li>南昌大学第二附属医院</li>
+							<li>江西省儿童医院</li>
+							<li>江西省人民医院</li>			
+							<li>南昌市第一医院</li>
+							<li>江西省肿瘤医院</li>
+						</ul>
+						
+						<ul id="subDep-clone" style="display:none;"></ul>
+					</div>
+				</div>
+				
+			</div>
+	
+							
+			<div data-role="footer"></div> 
+		</div>  
+		<script>  
+		new kendo.mobile.Application(document.body, {
+            skin: "flat-skin",
+        });  
+		
+		var app = kendo.mobile.application;		
+		
+		$(function () {
+
+			$("#subDep li").clone().appendTo("#subDep-clone");
+
+			var windowh = document.body.clientHeight;
+			$(".scrollerheight").height(windowh);
+			$("#firstDep").css("min-height", windowh);
+			$("#subDep").css("min-height", windowh);
+			$(".bk_chooseDept").css("min-height", windowh);
+		});
+	
+		function SubDeptList(dept, name, obj) {
+			if (obj != null) {
+				$("#firstDep li").removeClass("zg_active");
+				$(obj).addClass("zg_active");
+			}
+	
+			var ddl = $("#subDep");
+			ddl.empty();
+	
+			app.showLoading();
+			
+			$("#subDep-clone li").clone().appendTo("#subDep");
+			
+			app.hideLoading();
+		}
+	
+	
+		</script> 
+	</body>
+</html>	

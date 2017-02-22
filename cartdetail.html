@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>就诊卡详情</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="css/kendo.mobile.all.min.css" rel="stylesheet" />
+		<link href="css/bootstrap.min.css" rel="stylesheet" />
+		<link href="css/style.css" rel="stylesheet" />
+		<script src="js/jquery.min.js"></script>
+		<script src="js/kendo.mobile.min.js"></script>
+	</head>
+	<body>				  
+		<div data-role="view" id="orderdetail" class="page-bgcolor-gray">
+		    <div data-role="header">
+				<div data-role="navbar">
+					<span data-role="view-title" class="navbar-titlespan">就诊卡详情</span>
+				</div>
+			</div>  
+			<div class="cartdetailbox">
+				<ul data-role="listview">
+					<li>
+						<span class="col-xs-4">卡类型</span>
+						<span class="col-xs-8">诊疗卡</span>
+					</li>
+					<li>
+						<span class="col-xs-4">卡号</span>
+						<span class="col-xs-8">350000111132</span>
+					</li>
+					<li>
+						<span class="col-xs-4">姓名</span>
+						<span class="col-xs-8">文杰</span>
+					</li>
+					<li>
+						<span class="col-xs-4">电话</span>
+						<span class="col-xs-8">13263568954</span>
+					</li>
+					<li>
+						<span class="col-xs-4">身份证</span>
+						<span class="col-xs-8">36010219871654863256</span>
+					</li>
+					<li>
+						<span class="col-xs-4">条形码</span>
+						<span class="col-xs-8"><img src="images/txmimg.png" /></span>
+					</li>
+				</ul>
+			</div>  	
+			<div class="col-xs-12">
+				<button type="button" class="btn btn-default btn-bgcolor btn-bgcolor-red">删除就诊卡</button>
+			</div>
+							
+			<div data-role="footer"></div> 
+		</div>  
+		<script>  
+		new kendo.mobile.Application(document.body, {
+            skin: "flat-skin",
+        });  
+		</script> 
+	</body>
+</html>	
